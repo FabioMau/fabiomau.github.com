@@ -28,14 +28,14 @@ $(document).ready(function () {
             'id': "dodecaedro",
             'linkid': "linkDodecaedro",
             'render': function () {
-                return new Solid(new THREE.IcosahedronGeometry(100, 0));
+                return new Solid(new THREE.DodecahedronGeometry(100, 0));
             }
         }, {
             'Name': "Icosaedro",
             'id': "icosaedro",
             'linkid': "linkIcosaedro",
             'render': function () {
-                return new Solid(new THREE.DodecahedronGeometry(100, 0));
+                return new Solid(new THREE.IcosahedronGeometry(100, 0));
             }
         }
     ];
@@ -51,6 +51,9 @@ $(document).ready(function () {
                     pos = index;
             });
             setPage(pos);
+        }).on('change', '.solidColor', function () {            
+            solid.object.material.color = new THREE.Color($(this).val());
+            solid.object.material.specular = new THREE.Color($(this).val());
         });
 
     function setPage(pos) {
@@ -66,7 +69,6 @@ $(document).ready(function () {
     }
 
     function render() {
-        console.log(solid);
         requestAnimationFrame(render);
         solid.render();
         solid.update();

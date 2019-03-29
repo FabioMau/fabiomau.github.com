@@ -2,12 +2,11 @@ class Solid {
 
     constructor(Geometry) {        
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
         this.scene = new THREE.Scene();
 
         this.scene.add(this.camera);
         this.scene.background = new THREE.Color(0xffffff);
-        this.renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
 
         this.camera.position.z = 200;
 
@@ -47,6 +46,8 @@ class Solid {
     }
 
     render() {
+        this.renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+        this.camera.aspect = window.innerWidth / window.innerHeight;
         this.renderer.render(this.scene, this.camera);
     }
 
