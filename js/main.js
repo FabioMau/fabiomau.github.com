@@ -42,6 +42,7 @@ $(document).ready(function () {
 
     setPage(0);
     render(solid);
+    $('.color-picker').css("background-color", $('.solidColor').val());
 
     $(document)
         .on('click', '.solidlink', function () {
@@ -54,6 +55,7 @@ $(document).ready(function () {
         }).on('change', '.solidColor', function () {            
             solid.object.material.color = new THREE.Color($(this).val());
             solid.object.material.specular = new THREE.Color($(this).val());
+            $(this).parent().css("background-color", $(this).val());
         });
 
     function setPage(pos) {

@@ -45,9 +45,10 @@ class Solid {
         this.object.rotation.y += 1  / 100;
     }
 
-    render() {
+    render() {        
         this.renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
         this.camera.aspect = window.innerWidth / window.innerHeight;
+        this.scene.children[0].aspect = window.innerWidth / window.innerHeight;
         this.renderer.render(this.scene, this.camera);
     }
 
