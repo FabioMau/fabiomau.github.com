@@ -1,0 +1,15 @@
+body > .container-fluid {
+    margin-top: 20px;
+}
+
+.solido {
+    text-align: center;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 20px;
+}
