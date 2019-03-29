@@ -41,6 +41,7 @@ $(document).ready(function () {
     ];
 
     setPage(0);
+    render(solid);
 
     $(document)
         .on('click', '.solidlink', function () {
@@ -53,7 +54,6 @@ $(document).ready(function () {
         });
 
     function setPage(pos) {
-        solid.destroied = true;
         pages.forEach(page => {
             $('#' + page.id).hide();
             $('#' + page.linkid).parent().removeClass('active');
@@ -62,18 +62,14 @@ $(document).ready(function () {
         $('#' + pages[pos].id).show();
         $('#' + pages[pos].linkid).parent().addClass('active');
         solid = pages[pos].render();
-        render(solid);
         $('#' + pages[pos].id + ' .solido').append(solid.renderer.domElement);
     }
 
     function render() {
         console.log(solid);
-        
-        if(!solid.destroied) {
-            requestAnimationFrame(render);
-            solid.render();
-            solid.update();
-        }
+        requestAnimationFrame(render);
+        solid.render();
+        solid.update();
     }
 
 });

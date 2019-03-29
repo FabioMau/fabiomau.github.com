@@ -32,20 +32,18 @@ class Solid {
         this.scene.add(this.L2);
 
         this.object = new THREE.Mesh(Geometry, this.SolidMat);
-        this.object.rotation.z = 0.1;
+        this.object.rotation.z = 0.5;
         this.scene.add(this.object);
 
         this.geo = new THREE.EdgesGeometry(this.object.geometry);
         this.wireframe = new THREE.LineSegments(this.geo, this.LineMat);
         this.wireframe.renderOrder = 1;
         this.object.add(this.wireframe);
-
-        this.destroied = false;
     }
 
     update() {
-        this.object.rotation.x += 2 / 100;
-        this.object.rotation.y += 2 / 100;
+        this.object.rotation.x += 1 / 100;
+        this.object.rotation.y += 1  / 100;
     }
 
     render() {
