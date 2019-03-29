@@ -1,7 +1,6 @@
 class Solid {
 
-
-    constructor(Geometry) {
+    constructor(Geometry) {        
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         this.scene = new THREE.Scene();
@@ -40,19 +39,17 @@ class Solid {
         this.wireframe = new THREE.LineSegments(this.geo, this.LineMat);
         this.wireframe.renderOrder = 1;
         this.object.add(this.wireframe);
+
+        this.destroied = false;
     }
 
-    animation()  {
+    update() {
         this.object.rotation.x += 2 / 100;
         this.object.rotation.y += 2 / 100;
-        this.renderer.render( this.scene, this.camera );
-    
     }
 
     render() {
-        setTimeout(() => {
-            this.animation();
-        }, 10);
+        this.renderer.render(this.scene, this.camera);
     }
 
     html() {

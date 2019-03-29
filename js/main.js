@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
-    var solid;
+    var solid = new Solid(new THREE.TetrahedronGeometry(100, 0));
     var pages = [
         {
             'Name': "Tetraedro",
             'id': "tetraedro",
             'linkid': "linkTetraedro",
             'render': function () {
-                return new Solid(new THREE.TetrahedronGeometry(100, 0)).html();
+                return new Solid(new THREE.TetrahedronGeometry(100, 0));
             }
         }, {
             'Name': "Esaedro",
@@ -53,7 +53,7 @@ $(document).ready(function () {
         });
 
     function setPage(pos) {
-        //solid.detroy();
+        solid.destroied = true;
         pages.forEach(page => {
             $('#' + page.id).hide();
             $('#' + page.linkid).parent().removeClass('active');
@@ -62,7 +62,18 @@ $(document).ready(function () {
         $('#' + pages[pos].id).show();
         $('#' + pages[pos].linkid).parent().addClass('active');
         solid = pages[pos].render();
-        $('#' + pages[pos].id + ' .solido').append(solid.html());
+        render(solid);
+        $('#' + pages[pos].id + ' .solido').append(solid.renderer.domElement);
+    }
+
+    function render() {
+        console.log(solid);
+        
+        if(!solid.destroied) {
+            requestAnimationFrame(render);
+            solid.render();
+            solid.update();
+        }
     }
 
 });
