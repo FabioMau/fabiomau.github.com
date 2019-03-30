@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Solidi platonici</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/solid.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body class="text-center">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Solidi Platonici</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link solidlink" href="#" id="linkTetraedro">Tetraedro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link solidlink" href="#" id="linkEsaedro">Esaedro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link solidlink" href="#" id="linkOttaedro">Ottaedro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link solidlink" href="#" id="linkDodecaedro">Dodecaedro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link solidlink" href="#" id="linkIcosaedro">Icosaedro</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="tetraedro">
+        <h1 class="text-center">Tetraedro</h1>
+        <div class="solido"></div>
+        Colore:
+        <div class="color-picker">
+            <input type="color" class="solidColor" value="#00E4BE">
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-6" style="background-color:lavender;">
+                <h2>Numero di facce: 4</h2>
+                <h2>Numero di spigoli: 6</h2>
+                <h2>Numero di vertici: 4</h2>
+            </div>
+            <div class="col-sm-6" style="background-color:lavenderblush;">
+                <h2>VOLUME: `frac{sqrt2}{12}cdotl^3`</h2>
+                <h2>SUPERFICIE: `sqrt3cdotl^2`</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="esaedro">
+        <h1 class="text-center">Esaedro</h1>
+        <div class="solido"></div>
+        Colore:
+        <div class="color-picker">
+            <input type="color" class="solidColor" value="#00E4BE">
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-6" style="background-color:lavender;">
+                <h2>Numero di vertici: 8</h2>
+                <h2>Numero di facce: 6</h2>
+                <h2>Numero di spigoli: 12</h2>
+            </div>
+            <div class="col-sm-6" style="background-color:lavenderblush;">
+                <h2>VOLUME: `l^3`</h2>
+                <h2>SUPERFICIE: `6cdotl^2`</h2>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="container-fluid" id="ottaedro">
+        <h1 class="text-center">Ottaedro</h1>
+        <div class="solido"></div>
+        Colore:
+        <div class="color-picker">
+            <input type="color" class="solidColor" value="#00E4BE">
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-6" style="background-color:lavender;">
+                <h2>numero di facce: 8</h2>
+                <h2>numero di spigoli: 12</h2>
+                <h2>numero di vertici: 6</h2>
+            </div>
+            <div class="col-sm-6" style="background-color:lavenderblush;">
+                <h2>VOLUME: `frac{sqrt2}{3}cdotl^3`</h2>
+                <h2>SUPERFICIE: `2sqrt3cdotl^2`</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="dodecaedro">
+        <h1 class="text-center">Dodecaedro</h1>
+        <div class="solido"></div>
+        Colore:
+        <div class="color-picker">
+            <input type="color" class="solidColor" value="#00E4BE">
+        </div>
+        <br><br>
+
+        <div class="row">
+            <div class="col-sm-6" style="background-color:lavender;">
+                <h2>numero di facce: 12</h2>
+                <h2>numero di spigoli: 30</h2>
+                <h2>numero di vertici: 20</h2>
+            </div>
+            <div class="col-sm-6" style="background-color:lavenderblush;">
+                <h2>VOLUME: `frac{15+7sqrt5}{4}cdotl^3`</h2>
+                <h2>SUPERFICIE: `3sqrt(25+10sqrt5)cdotl^2`</h2>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-fluid" id="icosaedro">
+        <h1 class="text-center">Icosaedro</h1>
+        <div class="solido"></div>
+        Colore:
+        <div class="color-picker">
+            <input type="color" class="solidColor" value="#00E4BE">
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-6" style="background-color:lavender;">
+                <h2>numero di facce: 20</h2>
+                <h2>numero di spigoli: 30</h2>
+                <h2>numero di vertici: 12</h2>
+            </div>
+            <div class="col-sm-6" style="background-color:lavenderblush;">
+                <h2>VOLUME: `frac{5(3+sqrt5)}{12}cdotl^3`</h2>
+                <h2>SUPERFICIE: `3sqrt(25+10sqrt5)cdotl^2`</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fixed">Maulucci Fabio, Ienco Lorenzo</div>
+
+</body>
+
+</html>

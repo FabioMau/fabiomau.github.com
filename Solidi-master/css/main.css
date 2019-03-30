@@ -1,0 +1,28 @@
+body > .container-fluid {
+    margin-top: 20px;
+}
+
+.solido {
+    text-align: center;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 20px;
+}
+
+.color-picker {
+    width: 30%;
+    margin: auto;
+}
+
+input[type="color"] {
+	opacity: 0;
+	display: block;
+	width:  100%;
+	height: 32px;
+    border: none;
+}
